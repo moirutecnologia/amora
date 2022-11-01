@@ -1,0 +1,17 @@
+@import url('componentes/_geral.css');
+@import url('componentes/botoes.css');
+@import url('componentes/tabela.css');
+@import url('componentes/formulario.css');
+@import url('componentes/bulma-upload.css');
+@import url('componentes/bulma-galeria.css');
+@import url('componentes/bulma-editor.css');
+@import url('componentes/selectsearch.css');
+
+:root {
+    --cor-principal: #d25a65;
+    --cor-secundaria: #9b97a3;
+}
+
+body{
+    background-color: #f9f9f9;
+}

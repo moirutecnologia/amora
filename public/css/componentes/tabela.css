@@ -1,0 +1,148 @@
+.tabela {
+    border: 1px solid #dadada;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 10px 0px 1.5rem 0px !important;
+    overflow: hidden;
+}
+
+.tabela .cabecalho {
+    font-weight: bolder;
+    color: #8d8d8d;
+}
+
+.tabela .grupo {
+    /* font-weight: 300; */
+    font-weight: bolder;
+    background-color: #fff !important;
+    color: #730d15;
+    border-bottom: 1px solid #dadada;
+}
+
+.tabela .grupo+.grupo {
+    color: var(--cor-principal);
+}
+
+.tabela .grupo+.grupo+.grupo {
+    color: #e6888f;
+}
+
+.tabela .linha {
+    background-color: #fff;
+}
+
+.tabela .linha:not(.cabecalho):hover {
+    background-color: #fafafa;
+}
+
+.tabela .linha:not(:last-child) {
+    border-bottom: 1px solid #dadada;
+}
+
+.tabela .linha .acoes .column {
+    border: 0px;
+}
+
+.tabela .linha .positivo {
+    color: #4755bf;
+}
+
+.tabela .linha .negativo {
+    color: var(--cor-principal);
+}
+
+.tabela .acoes a {
+    color: #000;
+}
+
+.tabela .acoes .far.fa-edit {
+    color: #4dc989;
+}
+
+.tabela .acoes .far.fa-trash-alt {
+    color: #cc0f35;
+}
+
+.paginacao {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.paginacao a {
+    background-color: #fafafa;
+    border: 1px solid #dadada;
+    color: #000;
+    font-weight: 300;
+    width: 30px;
+    height: 30px;
+    font-size: 0.835rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paginacao span {
+    background-color: #fafafa;
+    border: 1px solid #dadada;
+    color: #000;
+    font-weight: 300;
+    width: 30px;
+    height: 30px;
+    font-size: 0.835rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paginacao .ativo {
+    border: 1px solid var(--cor-principal);
+    padding: 5px 10px 5px 10px;
+    color: #000;
+    font-weight: bolder;
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    font-size: 0.835rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-width: 991px) {
+    .tabela {
+        border: 0px;
+    }
+    .tabela .linha {
+        border: 1px solid #dadada;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        padding-top: .95rem!important;
+        padding-bottom: .95rem!important;
+    }
+    .tabela .acoes a {
+        font-size: 1rem;
+    }
+    .tabela .acoes .column {
+        margin-top: 20px;
+        border-top: 1px solid #dadada!important;
+    }
+    .tabela .acoes .column:not(:last-child) {
+        border-right: 1px solid #dadada;
+    }
+    .tabela .column {
+        padding-top: .35rem;
+        padding-bottom: .35rem;
+    }
+    .tabela .column[label]::before {
+        content: attr(label);
+        display: block;
+        font-weight: bolder;
+        color: #8d8d8d;
+        font-size: 12px;
+        text-align: left;
+    }
+    .tabela .paginacao {
+        background-color: #fafafa;
+    }
+}

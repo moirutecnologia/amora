@@ -1,0 +1,45 @@
+.button.is-primary:not(.button.is-primary.is-outlined, .button.is-primary.is-link) {
+    background-color: var(--cor-principal)!important;
+}
+
+.button.is-primary.is-outlined:focus, .button.is-primary.is-outlined:hover {
+    background-color: var(--cor-principal)!important;
+    border-color: var(--cor-principal)!important;
+    color: #fff!important;
+}
+
+.button.is-primary.is-outlined {
+    background-color: transparent;
+    border-color: var(--cor-principal)!important;
+    color: var(--cor-principal)!important;
+}
+
+.button.is-primary.is-outlined.is-loading {
+    background-color: var(--cor-principal)!important;
+    border-color: var(--cor-principal)!important;
+    color: var(--cor-principal)!important;
+}
+
+.button.is-link.is-primary {
+    border: 1px solid transparent!important;
+    background-color: transparent!important;
+    color: var(--cor-principal)!important;
+}
+
+.button.is-link.is-primary:hover {
+    border: 1px solid var(--cor-principal)!important;
+}
+
+.button.is-link.is-secondary {
+    border: 1px solid transparent!important;
+    background-color: transparent!important;
+    color: var(--cor-secundaria)!important;
+}
+
+.button.is-link.is-secondary:hover {
+    border: 1px solid var(--cor-secundaria)!important;
+}
+
+.button.is-focused:not(:active), .button:focus:not(:active) {
+    box-shadow: inherit!important;
+}

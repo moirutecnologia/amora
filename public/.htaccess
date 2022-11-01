@@ -1,0 +1,14 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^app/(.*) app/$1 [QSA,L]
+RewriteRule ^image/(.*) image/$1 [QSA,L]
+RewriteRule ^favicon/(.*) favicon/$1 [QSA,L]
+RewriteRule ^css/(.*) css/$1 [QSA,L]
+RewriteRule ^font/(.*) font/$1 [QSA,L]
+RewriteRule ^js/(.*) js/$1 [QSA,L]
+RewriteRule ^arquivo/(.*) arquivo/$1 [QSA,L]
+
+RewriteRule ^ index.php [QSA,L]

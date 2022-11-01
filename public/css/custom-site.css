@@ -1,0 +1,48 @@
+/* PAGINAS */
+
+/* INICIO */
+
+.hero.home{
+    background: url(/arquivo/geral/fundo.jpg)!important;
+    background-size: cover;
+}
+
+.hero.home .title{
+    color: #fff;
+}
+
+.conheca .far, .conheca .fas {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #d25a65;
+}
+
+.footer.site{
+    background-color: #d25a65!important;
+    color: #fff;
+}
+
+.fale-conosco {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 20px;
+    background-color: #d25a65;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.fale-conosco:hover {
+    background-color: #fff;
+    color: #d25a65;
+    border: 1px solid #d25a65;
+}
+
+
+/* INICIO - FIM */
+
+/* PAGINAS - FIM */
+
+@media(max-width: 991px) {}

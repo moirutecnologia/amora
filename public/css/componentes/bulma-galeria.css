@@ -1,0 +1,52 @@
+[bulma-galeria] {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    box-shadow:rgba(10, 10, 10, 0.1) 0px 1px 2px 0px inset;
+    box-sizing: border-box;
+    color: #363636;
+    max-width: 100%;
+    width: 100%;
+    padding: 20px;
+}
+
+[bulma-galeria] [imagens] {
+    padding-top: 10px;
+}
+
+[bulma-galeria] [imagem-galeria] {
+    position: relative;
+    min-height: 134px;
+    text-align: center;
+}
+
+[bulma-galeria] [imagem-galeria] img {
+    height: 134px;
+    object-fit: contain;
+}
+
+[bulma-galeria] [imagem-galeria][enviando] {
+    min-height: 134px;
+    background-color: #f5f5f5;
+    color: #000;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+[bulma-galeria] .opcoes {
+    height: 24px;
+}
+
+[bulma-galeria] [imagem-galeria] .remover {
+    float: right;
+    background-color: transparent;
+    color: #4dc989;
+}
+
+[bulma-galeria] [imagem-galeria] .visualizar {
+    float: right;
+    background-color: transparent;
+    color: #4dc989;
+    margin-right: 10px;
+}

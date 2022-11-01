@@ -1,0 +1,57 @@
+bulma-editor ferramentas {
+    display: block;
+    margin-bottom: 10px;
+}
+
+bulma-editor conteudo {
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: rgba(10, 10, 10, 0.1) 0px 1px 2px 0px inset;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 200px;
+    display: block;
+}
+
+bulma-editor conteudo:focus-visible {
+    outline-color: #3273dc!important;
+    box-shadow: 0 0 0 0.125em rgb(50 115 220 / 25%);
+}
+
+bulma-editor conteudo ul{
+    list-style: disc;
+    margin-left: 30px;
+}
+
+bulma-editor conteudo ul ul{
+    list-style: circle;
+}
+
+bulma-editor conteudo ul ul ul{
+    list-style: square;
+}
+
+bulma-editor conteudo ul ul ul ul{
+    list-style: auto;
+}
+
+bulma-editor conteudo ul ul ul ul ul{
+    list-style: lower-latin;
+}
+
+bulma-editor conteudo ul ul ul ul ul ul{
+    list-style: lower-roman;
+}
+
+bulma-editor conteudo table{
+    min-width: 10px;
+    min-height: 25px;
+}
+
+bulma-editor conteudo table tr td{
+    border: 1px solid #000;
+    min-width: 10px;
+    min-height: 25px;
+}
+

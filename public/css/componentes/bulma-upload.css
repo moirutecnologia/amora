@@ -1,0 +1,85 @@
+bulma-upload {
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    position: relative;
+    padding: 5px;
+    box-shadow:rgba(10, 10, 10, 0.1) 0px 1px 2px 0px inset;
+    box-sizing: border-box;
+}
+
+bulma-upload .arquivo {
+    height: 24px;
+    position: relative;
+}
+
+bulma-upload[value]:not([value=""]) {
+    color: transparent;
+}
+
+bulma-upload:before,
+bulma-upload[enviando]:not([enviando=""]):before,
+bulma-upload[value]:not([value=""]):before {
+    text-overflow: ellipsis;
+    width: 85%;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    color: #000;
+}
+
+
+bulma-upload:before {
+    content: 'Enviar';
+}
+
+bulma-upload[enviando]:not([enviando=""]):before {
+    content: attr(enviando);
+}
+
+bulma-upload[value]:not([value=""]):before {
+    content: attr(value);
+}
+
+bulma-upload[type="file"] {
+    z-index: 999;
+}
+
+bulma-upload[value=""] .acoes,
+bulma-upload:not([value]) .acoes {
+    display: none;
+}
+
+bulma-upload .acoes a {
+    color: #000;
+}
+
+@media(max-width: 991px) {
+
+    bulma-upload:before,
+    bulma-upload[enviando]:not([enviando=""]):before,
+    bulma-upload[value]:not([value=""]):before {
+        width: 85%;
+    }
+
+    bulma-upload .acoes .columns {
+        margin-top: 10px;
+        margin-left: -6px;
+        margin-right: -6px;
+        margin-bottom: -6px;
+        border-top: 1px solid #dadada !important;
+    }
+
+    bulma-upload .acoes a {
+        font-size: 1rem;
+    }
+
+    bulma-upload .acoes .column:not(:last-child) {
+        border-right: 1px solid #dadada;
+    }
+
+    bulma-upload .column {
+        padding-top: .35rem;
+        padding-bottom: .35rem;
+    }
+
+}

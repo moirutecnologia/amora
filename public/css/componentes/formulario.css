@@ -1,0 +1,28 @@
+.section .container.formulario{
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #dadada;
+}
+
+.section .container.formulario .label{
+    color: #575757;
+    font-weight: 500;
+}
+
+.section .container.formulario .subtitle{
+    padding-bottom: 10px;
+    color: var(--cor-principal);
+}
+
+.section .container.formulario .botoes{
+    padding: 20px;
+}
+
+.section .container #formulario .is-grouped{
+    padding: 20px;
+}
+
+.field .label small {
+    color: #b4b2b2;
+}
