@@ -73,7 +73,7 @@ $cliente = '';
                     </div>
                 </div>
             </div>
-            <?php if ($aguardandoentregas[$indice + 1]->cliente != $aguardandoentrega->cliente) { ?>
+            <?php if (!isset($aguardandoentregas[$indice + 1]) || $aguardandoentregas[$indice + 1]->cliente != $aguardandoentrega->cliente) { ?>
                 <div class="column is-12 linha rodape">
                     <div class="columns is-vcentered is-mobile">
                         <div class="column"><strong>Entrega: R$ <span js-total cliente_id="<?php echo $aguardandoentrega->cliente_id; ?>">0,00</span></strong></div>

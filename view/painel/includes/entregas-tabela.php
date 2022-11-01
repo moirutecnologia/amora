@@ -68,7 +68,7 @@ $data = '';
                 </div>
             </div>
             <?php
-            if ($entregas[$indice + 1]->cliente != $entrega->cliente || $entregas[$indice + 1]->data_entrega != $data) { ?>
+            if (!isset($entregas[$indice + 1]) || $entregas[$indice + 1]->cliente ?? '' != $entrega->cliente || $entregas[$indice + 1]->data_entrega ?? '' != $data) { ?>
                 <div class="column is-12 linha rodape">
                     <div class="columns is-vcentered is-mobile">
                         <div class="column"><strong>Entrega: R$ <?php echo mask($total_entrega, '$'); ?></strong></div>

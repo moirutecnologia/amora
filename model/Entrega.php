@@ -16,6 +16,12 @@ class Entrega extends _BaseModel
     {
         global $_usuario;
 
+        $parametros["aguardando_entrega"] ??= '';
+        $parametros["entrege"] ??= '';
+        $parametros["marca_id"] ??= '';
+        $parametros["cliente_id"] ??= '';
+        $parametros["pagina"] ??= '';
+
         $parametros["entregue_de"] = $parametros["entregue_de"] ?? '1900-01-01' ; 
         $parametros["entregue_ate"] = ($parametros["entregue_ate"] ?? '6000-01-01') . ' 23:59:59'; 
 
