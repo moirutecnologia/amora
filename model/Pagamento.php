@@ -64,7 +64,8 @@ class Pagamento extends _BaseModel
                     AND ('{$parametros['data_de']}' = '1900-01-01' OR cp.data >= '{$parametros['data_de']}')
                     AND ('{$parametros['data_ate']}' = '6000-01-01 23:59:59' OR cp.data <= '{$parametros['data_ate']}')
                 GROUP BY
-                    rotulo
+                    rotulo,
+                    DATE_FORMAT(cp.data, '%Y%m')
                 ORDER BY
                     DATE_FORMAT(cp.data, '%Y%m')";
 

@@ -53,7 +53,8 @@ class Investimento extends _BaseModel
                     AND ('{$parametros['data_de']}' = '1900-01-01' OR i.data >= '{$parametros['data_de']}')
                     AND ('{$parametros['data_ate']}' = '6000-01-01 23:59:59' OR i.data <= '{$parametros['data_ate']}')
                 GROUP BY
-                    rotulo
+                    rotulo,
+                    DATE_FORMAT(i.data, '%Y%m')
                 ORDER BY
                     DATE_FORMAT(i.data, '%Y%m')";
 

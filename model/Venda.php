@@ -48,7 +48,8 @@ class Venda extends _BaseModel
                     AND ('{$parametros['data_de']}' = '1900-01-01' OR v.data >= '{$parametros['data_de']}')
                     AND ('{$parametros['data_ate']}' = '6000-01-01 23:59:59' OR v.data <= '{$parametros['data_ate']}')
                 GROUP BY
-                    rotulo
+                    rotulo,
+                    DATE_FORMAT(v.data, '%Y%m')
                 ORDER BY
                     DATE_FORMAT(v.data, '%Y%m')";
 
@@ -92,7 +93,8 @@ class Venda extends _BaseModel
                         AND ('{$parametros['data_ate']}' = '6000-01-01 23:59:59' OR cp.data <= '{$parametros['data_ate']}')
                 ) AS GAIN
                 GROUP BY
-                    rotulo
+                    rotulo,
+                    DATE_FORMAT(CREATEDAT, '%Y%m')
                 ORDER BY
                     DATE_FORMAT(CREATEDAT, '%Y%m')";
 
