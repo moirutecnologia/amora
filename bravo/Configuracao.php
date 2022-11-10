@@ -64,14 +64,14 @@ $_banco_nome;
 $_banco_usuario;
 $_banco_senha;
 
-if (in_array($_SERVER['SERVER_NAME'], array('meunegocio.cusco.dev', 'amora.cusco.dev'))) {
+if (in_array($_SERVER['SERVER_NAME'], array('amora.moiru.com.br'))) {
 
     $_mostrar_erros = true;
 
     $_banco_servidor = 'localhost';
     $_banco_nome = 'amora';
-    $_banco_usuario = '5a26D1LKMI';
-    $_banco_senha = '7c@#&JY*Y@1QC9#';
+    $_banco_usuario = 'amora';
+    $_banco_senha = 'dBPh%#P8Jo52';
 
     $_email_de = 'naoresponda@mg.amora.cusco.dev';
     $_email_de_nome = 'amora';
