@@ -53,8 +53,8 @@ class Produto extends _BaseModel
                     vp.produto_id,
                     m.nome AS marca,  
                     p.nome AS produto,
-                    SUM(vp.quantidade) - IFNULL(ps.quantidade, 0) AS quantidade,
-                    vp.preco * (SUM(vp.quantidade) - IFNULL(ps.quantidade, 0)) AS total
+                    SUM(vp.quantidade) - IFNULL(MAX(ps.quantidade), 0) AS quantidade,
+                    MAX(vp.preco) * (SUM(vp.quantidade) - IFNULL(MAX(ps.quantidade), 0)) AS total
                 FROM vendas_produtos AS vp
                 INNER JOIN produtos AS p
                     ON vp.produto_id = p.id
