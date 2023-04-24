@@ -1,10 +1,15 @@
-<?php $marca = \controller\Marca::_obter($args['id']); ?>
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
+<?php $marca = \controller\Marca::_obter($args['id'] ?? ''); ?>
 
 <section id="pagina-venda" class="section pagina">
     <div class="container">
         <h1 class="subtitle">Cadastro de venda</h1>
 
-        <form id="formulario" action="#" method="post" data-id="<?php echo $marca->id; ?>">
+        <form id="formulario" action="#" method="post" data-id="<?php echo $marca->id ?? 12; ?>">
             <div class="columns is-multiline">
                 <div class="column is-2">
                     <div class="field">
@@ -81,7 +86,7 @@
                             </div>
                         </div>
                     </div>
-                </div>            
+                </div>
                 <div class="column">
                     <div class="field">
                         <label class="label">

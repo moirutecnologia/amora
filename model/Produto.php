@@ -21,6 +21,9 @@ class Produto extends _BaseModel
     {
         global $_usuario;
 
+        $parametros['busca'] ??= '';
+        $parametros['pagina'] ??= '';
+
         $sql = "SELECT
                     p.id,
                     CONCAT(m.nome , ' - ', p.nome) AS nome,

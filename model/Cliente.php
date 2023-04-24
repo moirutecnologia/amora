@@ -21,6 +21,9 @@ class Cliente extends _BaseModel
     {
         global $_usuario;
 
+        $parametros['busca'] ??= '';
+        $parametros['pagina'] ??= '';
+
         $sql = "SELECT
                     c.id,
                     c.nome,

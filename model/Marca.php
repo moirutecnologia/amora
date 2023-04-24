@@ -19,6 +19,9 @@ class Marca extends _BaseModel
     {
         global $_usuario;
 
+        $parametros['busca'] ??= '';
+        $parametros['pagina'] ??= '';
+
         $sql = "SELECT
                     m.id,
                     m.nome,
