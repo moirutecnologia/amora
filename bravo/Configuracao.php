@@ -1,6 +1,6 @@
 <?php
 
-$_versao = '2.2.5';
+$_versao = '2.2.6';
 
 $_seo = array(
     'title' => 'Amora',

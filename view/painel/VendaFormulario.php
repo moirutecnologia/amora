@@ -9,7 +9,7 @@ error_reporting(E_ALL);
     <div class="container">
         <h1 class="subtitle">Cadastro de venda</h1>
 
-        <form id="formulario" action="#" method="post" data-id="<?php echo $marca->id ?? 12; ?>">
+        <form id="formulario" action="#" method="post">
             <div class="columns is-multiline">
                 <div class="column is-2">
                     <div class="field">
