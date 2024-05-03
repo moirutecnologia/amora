@@ -103,7 +103,6 @@ class Cliente extends _BaseModel
 
         $sql = "SELECT
                     c.nome,
-                    DATE_FORMAT(v.data, '%Y%m') AS mes,
                     SUM(vp.preco * vp.quantidade) AS total,
                     COUNT(DISTINCT v.id) AS compras,
                     SUM(vp.preco * vp.quantidade) / COUNT(DISTINCT v.id) AS media,
@@ -119,9 +118,8 @@ class Cliente extends _BaseModel
                     AND ('{$parametros['data_ate']}' = '6000-01-01 23:59:59' OR v.data <= '{$parametros['data_ate']}')
                     AND ('{$parametros['cliente_id']}' = '' OR v.cliente_id = '{$parametros['cliente_id']}')
                 GROUP BY
-                    c.nome,
-                    DATE_FORMAT(v.data, '%Y%m')
-                ORDER BY 3 DESC, 5 DESC, 6 DESC";
+                    c.nome
+                ORDER BY 2 DESC, 4 DESC, 5 DESC";
 
         return $this->obterLista($sql, $parametros['pagina']);
     }
