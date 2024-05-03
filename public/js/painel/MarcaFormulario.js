@@ -13,6 +13,7 @@ $(function () {
 		dados.id = formulario.attr('data-id');
 		dados.nome = formulario.find('#nome').val();
 		dados.comissao = formulario.find('#comissao').val();
+		dados.enviar_whatsapp = formulario.find('#enviar_whatsapp').val();
 
 		elemento.addClass('is-loading');
 

@@ -8,6 +8,7 @@ class Marca extends _BaseModel
     public $nome;
     public $usuario_id;
     public $comissao;
+    public $enviar_whatsapp;
 
     public function __construct()
     {

@@ -61,6 +61,7 @@ class Marca extends _BaseController
         $model->id = $parametros['id'];
         $model->nome = $parametros['nome'];
         $model->comissao = real_para_decimal($parametros['comissao']);
+        $model->enviar_whatsapp = $parametros['enviar_whatsapp'];
 
         $dados = $model->buscarPor(array('usuario_id', 'nome'), array($model->usuario_id, $model->nome));
 

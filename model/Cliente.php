@@ -174,13 +174,21 @@ class Cliente extends _BaseModel
     {
         global $_usuario;
 
+        $parametros['dias_media_ultima'] ??= '';
+        $parametros['whatsapp_not_null'] ??= '';
+        $parametros['enviar_whatsapp'] ??= '';
+        
+        $parametros['usuario_id'] ??= $_usuario->id;
+
         $parametros['data_de'] = $parametros['data_de'] ?: '1900-01-01';
         $parametros['data_ate'] = $parametros['data_ate'] ?: '6000-01-01 23:59:59';
 
         $sql = "SELECT
+                    d.cliente_id,
                     c.nome AS cliente,
+                    c.whatsapp,
                     CONCAT(m.nome , ' - ', p.nome) AS produto,
-                    AVG(DATEDIFF(ultima, anterior)) AS media,
+                    ROUND(AVG(DATEDIFF(ultima, anterior)),0) AS media,
                     DATEDIFF(now(), MAX(ultima)) AS ultima,
                     AVG(DATEDIFF(ultima, anterior)) - DATEDIFF(now(), MAX(ultima)) AS ordem
                 FROM
@@ -204,11 +212,14 @@ class Cliente extends _BaseModel
                     FROM vendas_produtos AS vp
                     INNER JOIN vendas AS v
                         ON vp.venda_id = v.id
+                    INNER JOIN clientes AS c
+                        ON v.cliente_id = c.id
                     WHERE
-                        v.usuario_id = '{$_usuario->id}'
+                        v.usuario_id = '{$parametros['usuario_id']}'
                         AND ('{$parametros['data_de']}' = '1900-01-01' OR v.data >= '{$parametros['data_de']}')
                         AND ('{$parametros['data_ate']}' = '6000-01-01 23:59:59' OR v.data <= '{$parametros['data_ate']}')
                         AND ('{$parametros['cliente_id']}' = '' OR v.cliente_id = '{$parametros['cliente_id']}')
+                        AND ('{$parametros['whatsapp_not_null']}' = '' OR c.whatsapp IS NOT NULL)
                     ORDER BY v.data
                 ) d
                 INNER JOIN clientes AS c
@@ -217,12 +228,17 @@ class Cliente extends _BaseModel
                     ON d.produto_id = p.id
                 INNER JOIN marcas AS m
                     ON p.marca_id = m.id
-                WHERE d.anterior IS NOT NULL
+                WHERE
+                    d.anterior IS NOT NULL
+                    AND ('{$parametros['enviar_whatsapp']}' = '' OR m.enviar_whatsapp = '{$parametros['enviar_whatsapp']}')
                 GROUP BY
-                    cliente_id,
-                    produto_id
+                    d.cliente_id,
+                    c.whatsapp,
+                    d.produto_id
+                HAVING
+                    ('{$parametros['dias_media_ultima']}' = '' OR (ROUND(AVG(DATEDIFF(ultima, anterior)),0) - DATEDIFF(now(), MAX(ultima))) = '{$parametros['dias_media_ultima']}')
                 ORDER BY 
-                    1,
+                    2,
                     5";
 
         return $this->obterLista($sql, $parametros['pagina']);

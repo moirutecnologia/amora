@@ -1,5 +1,11 @@
-<?php global $_usuario; ?>
+<?php
+global $_usuario;
 
+if (!empty($_usuario)) {
+    header('location: /painel');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt">
 

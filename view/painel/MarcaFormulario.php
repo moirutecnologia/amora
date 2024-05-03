@@ -19,6 +19,19 @@
                 </div>
             </div>
 
+
+            <div class="field">
+                <label class="label">Enviar WhatsApp</label>
+                <div class="control">
+                    <div class="select is-fullwidth">
+                        <select id="enviar_whatsapp" required>
+                            <option value="0" <?php echo $marca->enviar_whatsapp == 0 ? 'selected' : ''; ?>>Não</option>
+                            <option value="1" <?php echo $marca->enviar_whatsapp == 1 ? 'selected' : ''; ?>>Sim</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
             <div class="field is-grouped is-grouped-centered">
                 <div class="control">
                     <a href="/painel/marcas" class="button is-link is-primary">Cancelar</a>
