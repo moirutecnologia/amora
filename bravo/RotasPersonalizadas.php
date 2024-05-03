@@ -46,36 +46,36 @@ $app->get('/agendar/whatsapp-recompra', function ($request, $response, $args) {
     }
 
     foreach ($clientes as $cliente) {
-        $mensagem = "Oi, $cliente[cliente]. Tudo bem? Vi que alguns produtos que comprou comigo podem estar acabando. Qualquer coisa me chama, tá?\n" . implode("\n", $cliente['produtos']);
+        $mensagem = "Oi, $cliente[cliente]. Tudo bem?\nVi que alguns produtos que comprou comigo podem estar acabando.👇\n\n" . implode("\n", $cliente['produtos']) . "\n\nQualquer coisa chama tá!😉";
 
         $dados = array(
-            'para' => '5554996766177',
+            'para' => '55' . $cliente['whatsapp'],
             'mensagem' => $mensagem
         );
 
-        // $curl = curl_init();
+        $curl = curl_init();
 
-        // curl_setopt_array($curl, array(
-        //     CURLOPT_URL => 'https://whatsapp.moiru.com.br/api/enviar',
-        //     CURLOPT_RETURNTRANSFER => true,
-        //     CURLOPT_ENCODING => '',
-        //     CURLOPT_MAXREDIRS => 10,
-        //     CURLOPT_TIMEOUT => 0,
-        //     CURLOPT_FOLLOWLOCATION => true,
-        //     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        //     CURLOPT_CUSTOMREQUEST => 'POST',
-        //     CURLOPT_POSTFIELDS => json_encode($dados),
-        //     CURLOPT_HTTPHEADER => array(
-        //         'Content-Type: application/json',
-        //         'Authorization: Bearer fca9901fab3d632b57f3dada73e9d2fc8a7a1c1dfae6d13944db82561b547204'
-        //     ),
-        // ));
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://whatsapp.moiru.com.br/api/enviar',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => json_encode($dados),
+            CURLOPT_HTTPHEADER => array(
+                'Content-Type: application/json',
+                'Authorization: Bearer fca9901fab3d632b57f3dada73e9d2fc8a7a1c1dfae6d13944db82561b547204'
+            ),
+        ));
 
-        // curl_exec($curl);
+        curl_exec($curl);
 
-        // curl_close($curl);
+        curl_close($curl);
 
-        echo $mensagem . '<hr>';
+        // echo $mensagem . '<hr>';
     }
 
     // var_dump(array_column($clientes, 'cliente_id'));
