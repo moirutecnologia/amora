@@ -119,7 +119,8 @@ class Cliente extends _BaseModel
                     AND ('{$parametros['data_ate']}' = '6000-01-01 23:59:59' OR v.data <= '{$parametros['data_ate']}')
                     AND ('{$parametros['cliente_id']}' = '' OR v.cliente_id = '{$parametros['cliente_id']}')
                 GROUP BY
-                    c.nome
+                    c.nome,
+                    DATE_FORMAT(v.data, '%Y%m')
                 ORDER BY 3 DESC, 5 DESC, 6 DESC";
 
         return $this->obterLista($sql, $parametros['pagina']);
