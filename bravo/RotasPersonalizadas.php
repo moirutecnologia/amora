@@ -32,7 +32,7 @@ $app->get('/agendar/whatsapp-recompra', function ($request, $response, $args) {
     $clientesController = new \controller\Cliente;
     $produtos = $clientesController->listarRelatorioIntervaloCompraProduto(array(
         'data_de' => date('Y-m-d', strtotime('-20 year')),
-        //'dias_media_ultima' => 15,
+        'dias_media_ultima' => 15,
         'whatsapp_not_null' => 1,
         'enviar_whatsapp' => 1,
         'usuario_id' => 13,
@@ -48,11 +48,10 @@ $app->get('/agendar/whatsapp-recompra', function ($request, $response, $args) {
     var_dump($clientes);
 
     foreach ($clientes as $cliente) {
-        $mensagem = "Oi, $cliente[cliente]. Tudo bem?\nVi que alguns produtos que comprou comigo podem estar acabando.👇\n\n" . implode("\n", $cliente['produtos']) . "\n\nQualquer coisa chama tá!😉\n\n👉 Para sua primeira compra on-line Natura, coloque o cupom PRIMEIRACOMPRA e terá um desconto extra de 20% em natura.com.br/consultoria/simonectj.";
+        $mensagem = "Oi, $cliente[cliente]. Tudo bem?\nVi que algum produto que comprou comigo pode estar acabando.👇\n\n" . implode("\n", $cliente['produtos']) . "\n\nQualquer coisa chama tá!😉\n\n👉 Para sua primeira compra on-line Natura, coloque o cupom PRIMEIRACOMPRA e terá um desconto extra de 20% em natura.com.br/consultoria/simonectj.";
 
         $dados = array(
-            // 'para' => '55' . $cliente['whatsapp'],
-            'para' => '5554996766177',
+            'para' => '55' . $cliente['whatsapp'],
             'mensagem' => $mensagem
         );
 
@@ -77,8 +76,6 @@ $app->get('/agendar/whatsapp-recompra', function ($request, $response, $args) {
         curl_exec($curl);
 
         curl_close($curl);
-
-        exit;
 
         // echo $mensagem . '<hr>';
     }
