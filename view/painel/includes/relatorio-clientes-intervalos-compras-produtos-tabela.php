@@ -14,6 +14,7 @@ $agrupador = '';
                 <div class="column">Produto</div>
                 <div class="column">Média recompra (Dias)</div>
                 <div class="column">Última compra (Dias)</div>
+                <div class="column">Alerta em (Dias)</div>
             </div>
         </div>
 
@@ -23,7 +24,7 @@ $agrupador = '';
                 $agrupador = $cliente->cliente;
             ?>
                 <div class="column is-12 grupo">
-                    <span><?php echo $agrupador; ?></span>
+                    <a href="/painel/cadastro/cliente/<?php echo $cliente->cliente_id ?>" target="_blank"><span><?php echo $agrupador; ?></a></span>
                 </div>
             <?php
             } // if $agrupador != $cliente->cliente
@@ -33,6 +34,7 @@ $agrupador = '';
                     <div class="column" label="Produto"><?php echo $cliente->produto; ?></div>
                     <div class="column" label="Médias recompra (Dias)"><?php echo intval($cliente->media); ?></div>
                     <div class="column" label="Última compra (Dias)"><?php echo $cliente->ultima; ?></div>
+                    <div class="column" label="Alerta em (Dias)"><?php echo $cliente->alerta; ?></div>
                 </div>
             </div>
         <?php } // foreach $clientes 

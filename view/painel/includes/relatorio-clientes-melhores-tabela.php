@@ -21,7 +21,7 @@ $clientes = $clientes->listarRelatorioMelhores($parametros);
         <?php foreach ($clientes->resultado as $cliente) { ?>
             <div class="column is-12 linha">
                 <div class="columns is-vcentered">
-                    <div class="column" label="Nome"><?php echo $cliente->nome; ?></div>
+                    <div class="column" label="Nome"><a href="/painel/cadastro/cliente/<?php echo $cliente->id; ?>" target="_blank"><?php echo $cliente->nome; ?></a></div>
                     <div class="column" label="Total">R$ <?php echo mask($cliente->total, '$'); ?></div>
                     <div class="column" label="Compras"><?php echo $cliente->compras; ?></div>
                     <div class="column" label="Média">R$ <?php echo mask($cliente->media, '$'); ?></div>
