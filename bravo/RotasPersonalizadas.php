@@ -31,7 +31,7 @@ $app->get('/painel/extra/amora', function ($request, $response, $args) {
 $app->get('/agendar/whatsapp-recompra', function ($request, $response, $args) {
     $clientesController = new \controller\Cliente;
     $produtos = $clientesController->listarRelatorioIntervaloCompraProduto(array(
-        'data_de' => date('Y-m-d', strtotime('-10 year')),
+        'data_de' => date('Y-m-d', strtotime('-20 year')),
         'dias_media_ultima' => 15,
         'whatsapp_not_null' => 1,
         'enviar_whatsapp' => 1,
