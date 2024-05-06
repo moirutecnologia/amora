@@ -32,7 +32,7 @@ $app->get('/agendar/whatsapp-recompra', function ($request, $response, $args) {
     $clientesController = new \controller\Cliente;
     $produtos = $clientesController->listarRelatorioIntervaloCompraProduto(array(
         'data_de' => date('Y-m-d', strtotime('-20 year')),
-        'dias_media_ultima' => 15,
+        //'dias_media_ultima' => 15,
         'whatsapp_not_null' => 1,
         'enviar_whatsapp' => 1,
         'usuario_id' => 13,
@@ -45,11 +45,14 @@ $app->get('/agendar/whatsapp-recompra', function ($request, $response, $args) {
         $clientes[$produto->cliente_id]['produtos'][] = $produto->produto;
     }
 
+    var_dump($clientes);
+
     foreach ($clientes as $cliente) {
-        $mensagem = "Oi, $cliente[cliente]. Tudo bem?\nVi que alguns produtos que comprou comigo podem estar acabando.👇\n\n" . implode("\n", $cliente['produtos']) . "\n\nQualquer coisa chama tá!😉";
+        $mensagem = "Oi, $cliente[cliente]. Tudo bem?\nVi que alguns produtos que comprou comigo podem estar acabando.👇\n\n" . implode("\n", $cliente['produtos']) . "\n\nQualquer coisa chama tá!😉\n\n👉 Para sua primeira compra on-line Natura, coloque o cupom PRIMEIRACOMPRA e terá um desconto extra de 20% em natura.com.br/consultoria/simonectj.";
 
         $dados = array(
-            'para' => '55' . $cliente['whatsapp'],
+            // 'para' => '55' . $cliente['whatsapp'],
+            'para' => '5554996766177',
             'mensagem' => $mensagem
         );
 
@@ -67,13 +70,15 @@ $app->get('/agendar/whatsapp-recompra', function ($request, $response, $args) {
             CURLOPT_POSTFIELDS => json_encode($dados),
             CURLOPT_HTTPHEADER => array(
                 'Content-Type: application/json',
-                'Authorization: Bearer fca9901fab3d632b57f3dada73e9d2fc8a7a1c1dfae6d13944db82561b547204'
+                'Authorization: Bearer 88d3fdaf072c50203f38550425a4410c56ae80f05c1ff52efc33b8b855e03930'
             ),
         ));
 
         curl_exec($curl);
 
         curl_close($curl);
+
+        exit;
 
         // echo $mensagem . '<hr>';
     }
