@@ -45,7 +45,7 @@ $app->get('/agendar/whatsapp-recompra', function ($request, $response, $args) {
         $clientes[$produto->cliente_id]['produtos'][] = $produto->produto;
     }
 
-    var_dump($clientes);
+    // var_dump($clientes);
 
     foreach ($clientes as $cliente) {
         $mensagem = "Oi, $cliente[cliente]. Tudo bem?\nVi que algum produto que comprou comigo pode estar acabando.👇\n\n" . implode("\n", $cliente['produtos']) . "\n\nQualquer coisa chama tá!😉\n\n👉 Para sua primeira compra on-line Natura, coloque o cupom PRIMEIRACOMPRA e terá um desconto extra de 20% em natura.com.br/consultoria/simonectj.";
