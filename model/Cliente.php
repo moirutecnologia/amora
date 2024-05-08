@@ -207,6 +207,7 @@ class Cliente extends _BaseModel
                             sv.usuario_id = '{$parametros['usuario_id']}'
                             AND ('{$parametros['data_de']}' = '1900-01-01' OR sv.data >= '{$parametros['data_de']}')
                             AND ('{$parametros['data_ate']}' = '6000-01-01 23:59:59' OR sv.data <= '{$parametros['data_ate']}')
+                            AND ('{$parametros['enviar_whatsapp']}' = '' OR m.enviar_whatsapp = '{$parametros['enviar_whatsapp']}')
                             AND ('{$parametros['cliente_id']}' = '' OR sv.cliente_id = '{$parametros['cliente_id']}')
                             AND ('{$parametros['whatsapp_not_null']}' = '' OR c.whatsapp IS NOT NULL);");
 
