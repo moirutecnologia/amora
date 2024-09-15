@@ -1,6 +1,6 @@
 <?php
 
-$_versao = '2.3.0';
+$_versao = '3.0.0';
 
 $_seo = array(
     'title' => 'Amora',
@@ -68,7 +68,7 @@ if (in_array($_SERVER['SERVER_NAME'], array('amora.moiru.com.br'))) {
 
     $_mostrar_erros = true;
 
-    $_banco_servidor = 'localhost';
+    $_banco_servidor = '192.0.0.2';
     $_banco_nome = 'amora';
     $_banco_usuario = 'amora';
     $_banco_senha = 'dBPh%#P8Jo52';
