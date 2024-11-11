@@ -3,7 +3,7 @@
         <h2 class="subtitle">Relatórios</h2>
 
         <a href="#filtro" class="filtro-mobile" data-fancybox><i class="fas fa-search"></i></a>
-        <div id="filtro" class="columns filtro">
+        <div id="filtro" class="columns filtro is-multiline">
             <div class="column is-3">
                 <div class="field">
                     <label class="label">Relatório</label>
@@ -27,6 +27,19 @@
                         <div class="select is-fullwidth">
                             <select id="tipo" js-filtro-change>
                                 <option value="">Selecione o relatório</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4" js-filtro="clientes" style="display: none;">
+                <div class="field">
+                    <label class="label">Produto</label>
+                    <div class="control">
+                        <div class="select is-fullwidth com-filtro">
+                            <input type="text" placeholder="Selecione">
+                            <select id="produto_id" js-filtro-change>
+                                <?php include '../view/painel/includes/produtos-opcoes.php'; ?>
                             </select>
                         </div>
                     </div>

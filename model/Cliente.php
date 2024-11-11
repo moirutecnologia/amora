@@ -302,6 +302,7 @@ class Cliente extends _BaseModel
                     AND ('{$parametros['data_de']}' = '1900-01-01' OR v.data >= '{$parametros['data_de']}')
                     AND ('{$parametros['data_ate']}' = '6000-01-01 23:59:59' OR v.data <= '{$parametros['data_ate']}')
                     AND ('{$parametros['cliente_id']}' = '' OR v.cliente_id = '{$parametros['cliente_id']}')
+                    AND ('{$parametros['produto_id']}' = '' OR vp.produto_id = '{$parametros['produto_id']}')
                 ORDER BY v.data DESC";
 
         return $this->obterLista($sql, $parametros['pagina']);
